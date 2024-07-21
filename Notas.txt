@@ -1,0 +1,28 @@
+Função calcularCargaTermica(): Esta função é responsável por calcular a carga térmica total com base em valores fornecidos pelo usuário na interface da web.
+
+const params: Esta linha cria um objeto params que armazena todos os valores necessários para os cálculos. A ideia é agrupar todos os dados de entrada em um único objeto para facilitar a manipulação e o uso desses dados nas funções de cálculo.
+
+document.getElementById('id').value: Para cada campo de entrada no formulário HTML, usamos document.getElementById('id').value para obter o valor inserido pelo usuário. Aqui, 'id' é o identificador do campo HTML.
+
+parseFloat(...): Como os valores retornados por document.getElementById('id').value são sempre strings, usamos parseFloat() para converter essas strings em números de ponto flutuante. Isso é essencial para realizar cálculos matemáticos com esses valores.
+
+const cargaP = cargaPessoas(params.numpessoas);:
+
+Função: cargaPessoas
+Parâmetro: params.numpessoas
+Descrição: Calcula a carga térmica gerada pelas pessoas no ambiente com base no número de pessoas. O valor retornado é armazenado na constante cargaP.
+
+assim para os demais itens 
+
+const cargaTotal = cargaP + cargaA.cargaSensLat + cargaPar + cargaI + cargaE;:
+
+Descrição: Soma todas as cargas térmicas individuais (pessoas, ar externo, paredes, iluminação, equipamentos) para obter a carga térmica total do ambiente. cargaA.cargaSensLat é a carga térmica combinada sensível e latente do ar externo.
+
+return { cargaTotal, cargaSensivel: cargaA.cargaSensivel, cargaLatente: cargaA.cargaLatente };:
+
+Descrição: Retorna um objeto contendo três propriedades:
+cargaTotal: A carga térmica total calculada.
+cargaSensivel: A carga térmica sensível do ar externo.
+cargaLatente: A carga térmica latente do ar externo.
+
+

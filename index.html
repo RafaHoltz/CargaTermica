@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cálculo de Carga Térmica</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Cálculo de Carga Térmica</h1>
+    <form id="cargaTermica">
+        <label for="numpessoas">Número de pessoas:</label>
+        <input type="number" id="numpessoas" name="numpessoas" required>
+
+        <label for="VolumeAEX">Volume de ar externo (m³/h):</label>
+        <input type="number" id="VolumeAEX" name="VolumeAEX" required>
+
+        <label for="deltaT">DeltaT AEX e interno (°C):</label>
+        <input type="number" id="deltaT" name="deltaT" required>
+
+        <label for="deltaW">Diferença de Umidade do Ar (g/kg):</label>
+        <input type="number" id="deltaW" name="deltaW" required>
+
+        <label for="areaParedes">Área das Paredes (m²):</label>
+        <input type="number" id="areaParedes" name="areaParedes" required>
+
+        <label for="uValueParedes">Valor U das Paredes (W/m²K):</label>
+        <input type="number" id="uValueParedes" name="uValueParedes" required>
+
+        <label for="deltaTParedes">Diferença de Temperatura das Paredes (°C):</label>
+        <input type="number" id="deltaTParedes" name="deltaTParedes" required>
+        
+        <label for="areaIluminacao">Área da Iluminação (m²):</label>
+        <input type="number" id="areaIluminacao" name="areaIluminacao" required>
+
+        <label for="wattsIluminacao">Potência da Iluminação (W/m²):</label>
+        <input type="number" id="wattsIluminacao" name="wattsIluminacao" required>
+
+        <label for="potenciaEquipamentos">Potência dos Equipamentos (W):</label>
+        <input type="number" id="potenciaEquipamentos" name="potenciaEquipamentos" required>
+
+        <button type="button" onclick="calcularCargaTermica()">Calcular</button>
+    </form>
+
+    <div class="result">
+        <p id="resultKw">Carga Térmica Total: <span id="cargaKw">0</span> kW</p>
+        <p id="resultKbtu">Carga Térmica Total: <span id="cargaKbtu">0</span> kBTU/h</p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
